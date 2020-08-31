@@ -1,0 +1,14 @@
+.userimg{
+    width:200rpx;
+    height:200rpx;
+    display:block;
+    margin:10px auto;
+    border-radius: 50%;
+}
+.box {
+    width: 300rpx;
+    height: 300rpx;
+    border: 1rpx solid red;
+    margin: 10rpx auto;
+  }
+  

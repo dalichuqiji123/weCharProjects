@@ -1,0 +1,38 @@
+<!--pages/find/find.wxml-->
+<view>
+    <!-- 变量用双括号括起来-->
+    <h1>{{msg}}</h1>
+    <!-- 点击事件 -->
+    <button bindtap='msgChange'>点我</button>
+    <!-- input事件的双向绑定 -->
+    <input value="{{info}}" bindinput='infoChange'/>
+    <!-- catchtap用于阻止事件冒泡 -->
+    <view bindtap = "hanle1">
+        <view catchtap = "hanle2"></view>
+    </view>
+    <!-- 条件渲染 -->
+    <view class='a' wx:if='{{tiaojian=="1"}}' ></view>
+    <view class='b' wx:elif='{{tiaojian=="2"}}' ></view>
+    <view class='c' wx:else='{{tiaojian=="3"}}' ></view>
+    <button bindtap="colorChange">改变颜色</button>
+    <!-- for循环 通过data来进行传参（data-index）-->
+    <view wx:for="{{list}}" wx:key="id" wx:for-index="itemidx" wx:for-item="itemtitle"
+        bindtap='console' data-index="{{itemidx}}" data-id="{{itemtitle.id}}" 
+    >
+        <span>{{itemtitle.id}}</span>
+        <span>{{itemidx}}</span>
+        <span>---</span>
+        <span>{{itemtitle.title}}</span>
+    </view>
+    <!--language-->
+    <div class="language">
+        <span 
+            wx:for="{{arr}}"
+            wx:key='id'
+            class="{{itemidx==idx && 'on'}}" 
+            wx:for-index="itemidx"
+            bindtap='langChange'
+            data-index="{{itemidx}}"
+        >{{item.lang}}</span>
+    </div>
+</view>
